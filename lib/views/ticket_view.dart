@@ -3,6 +3,7 @@ import 'package:book_ticket/utils/app_styles.dart';
 import 'package:book_ticket/widgets/thick_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class TicketView extends StatelessWidget {
   const TicketView({super.key});
@@ -26,6 +27,7 @@ class TicketView extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
+                  // First Row
                   Row(
                     children: [
                       Text(
@@ -63,7 +65,7 @@ class TicketView extends StatelessWidget {
                           ),
                           Center(
                             child: Transform.rotate(
-                              angle: 1.6,
+                              angle: 1.5,
                               child: const Icon(
                                 Icons.local_airport_rounded,
                                 color: Colors.white,
@@ -74,11 +76,44 @@ class TicketView extends StatelessWidget {
                       ),
                       const ThickContainer(),
                       Expanded(child: Container()),
-                      Text("London",
+                      Text("LDN",
                           style: Styles.headLineStyle3
                               .copyWith(color: Colors.white)),
                     ],
+                  ),
+
+                  const Gap(3),
+
+                  // Second Row
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        width: 100,
+                        child: Text(
+                          'New-York',
+                          style: Styles.headLineStyle4
+                              .copyWith(color: Colors.white),
+                        ),
+                      ),
+                      Text(
+                        "8H 30M",
+                        style:
+                            Styles.headLineStyle4.copyWith(color: Colors.white),
+                      ),
+                      SizedBox(
+                        width: 100,
+                        child: Text(
+                          "London",
+                          textAlign: TextAlign.end,
+                          style: Styles.headLineStyle4
+                              .copyWith(color: Colors.white),
+                        ),
+                      )
+                    ],
                   )
+
+                  // Third Row
                 ],
               ),
             )
