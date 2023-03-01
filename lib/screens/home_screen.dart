@@ -8,14 +8,15 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(
+        child: Scaffold(
       backgroundColor: Styles.bgColor,
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         children: [
           Column(
             children: [
-              const Gap(100),
+              const Gap(40),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -44,11 +45,11 @@ class HomeScreen extends StatelessWidget {
                         )),
                   )
                 ],
-              )
+              ),
             ],
           )
         ],
       ),
-    );
+    ));
   }
 }
