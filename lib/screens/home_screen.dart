@@ -1,7 +1,6 @@
 import 'package:book_ticket/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:gap/gap.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -64,6 +63,25 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
+              const Gap(40),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Upcoming Flights",
+                    style: Styles.headLineStyle1,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      debugPrint("Tapped");
+                    },
+                    child: Text(
+                      "View all",
+                      style: Styles.textStyle,
+                    ),
+                  )
+                ],
+              )
             ],
           )
         ],
