@@ -16,7 +16,9 @@ class TicketView extends StatelessWidget {
       height: 200,
       child: Container(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
+            // First Container (Blue Part of the Ticket)
             Container(
               decoration: const BoxDecoration(
                 color: Color(0xFF526799),
@@ -112,8 +114,63 @@ class TicketView extends StatelessWidget {
                       )
                     ],
                   )
+                ],
+              ),
+            ),
 
-                  // Third Row
+            // Second Container (Red Part of the Ticket)
+            Container(
+              color: Styles.orangeColor,
+              child: Row(
+                children: [
+                  const SizedBox(
+                    height: 20,
+                    width: 10,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: LayoutBuilder(
+                      builder:
+                          (BuildContext context, BoxConstraints constraints) {
+                        return Flex(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.max,
+                          direction: Axis.horizontal,
+                          children: List.generate(
+                            (constraints.constrainWidth() / 15).floor(),
+                            (index) => const SizedBox(
+                              width: 5,
+                              height: 1,
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(color: Colors.white),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                    width: 10,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             )
