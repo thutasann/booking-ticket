@@ -17,6 +17,7 @@ class TicketView extends StatelessWidget {
       width: size.width,
       height: 200,
       child: Container(
+        margin: const EdgeInsets.only(right: 16),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -189,7 +190,8 @@ class TicketView extends StatelessWidget {
                     bottomLeft: Radius.circular(21),
                     bottomRight: Radius.circular(21)),
               ),
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.only(
+                  left: 16, top: 10, right: 16, bottom: 16),
               child: Column(
                 children: [
                   Row(
