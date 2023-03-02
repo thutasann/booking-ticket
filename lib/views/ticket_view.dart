@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:book_ticket/utils/app_layout.dart';
 import 'package:book_ticket/utils/app_styles.dart';
 import 'package:book_ticket/widgets/thick_container.dart';
@@ -14,7 +12,7 @@ class TicketView extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return SizedBox(
-      width: size.width,
+      width: size.width * 0.85,
       height: 200,
       child: Container(
         margin: const EdgeInsets.only(right: 16),
