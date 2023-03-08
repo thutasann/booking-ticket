@@ -1,6 +1,7 @@
 import 'package:book_ticket/utils/app_layout.dart';
 import 'package:book_ticket/utils/app_styles.dart';
 import 'package:book_ticket/widgets/icon_text_widget.dart';
+import 'package:book_ticket/widgets/sub_title_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -92,10 +93,35 @@ class SearchScreen extends StatelessWidget {
               icon: Icons.flight_takeoff_rounded,
               text: "Departure",
             ),
-            Gap(AppLayout.getHeight(25)),
+            Gap(AppLayout.getHeight(15)),
             const AppIconText(
               icon: Icons.flight_land_rounded,
               text: "Arrival",
+            ),
+
+            // FIND TICKET BUTTON
+            Gap(AppLayout.getHeight(25)),
+            Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: AppLayout.getWidth(15),
+                vertical: AppLayout.getWidth(15),
+              ),
+              decoration: BoxDecoration(
+                color: const Color(0xD91139CE),
+                borderRadius: BorderRadius.circular(AppLayout.getWidth(10)),
+              ),
+              child: Center(
+                  child: Text(
+                "Find Ticket",
+                style: Styles.textStyle.copyWith(color: Colors.white),
+              )),
+            ),
+
+            // SUB TITLE SECTION
+            Gap(AppLayout.getHeight(25)),
+            const SubTitleWidget(
+              bigText: "Upcoming Flights",
+              smallText: "View all",
             ),
           ],
         ),

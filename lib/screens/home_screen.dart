@@ -2,6 +2,7 @@ import 'package:book_ticket/screens/hotel_screen.dart';
 import 'package:book_ticket/utils/app_info_list.dart';
 import 'package:book_ticket/utils/app_styles.dart';
 import 'package:book_ticket/views/ticket_view.dart';
+import 'package:book_ticket/widgets/sub_title_widget.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -68,24 +69,8 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const Gap(40),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Upcoming Flights",
-                    style: Styles.headLineStyle1,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      debugPrint("Tapped");
-                    },
-                    child: Text(
-                      "View all",
-                      style: Styles.textStyle.copyWith(color: Colors.grey),
-                    ),
-                  )
-                ],
-              )
+              const SubTitleWidget(
+                  bigText: "Upcoming Flights", smallText: "View all")
             ],
           ),
           const Gap(15),
@@ -104,21 +89,9 @@ class HomeScreen extends StatelessWidget {
           ),
           const Gap(15),
           Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Hotels",
-                  style: Styles.headLineStyle2,
-                ),
-                InkWell(
-                  onTap: () {
-                    debugPrint("You are Tapped");
-                  },
-                  child: (Text("View All",
-                      style: Styles.textStyle.copyWith(color: Colors.grey))),
-                )
-              ],
+            child: const SubTitleWidget(
+              bigText: "Hotels",
+              smallText: "View all",
             ),
           ),
           const Gap(15),
