@@ -148,14 +148,21 @@ class TicketScreen extends StatelessWidget {
 
                 // QR SECTION
                 Container(
-                  color: Colors.white,
-                  margin: const EdgeInsets.only(
-                    left: 15,
-                    right: 15,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(21),
+                      bottomLeft: Radius.circular(21),
+                    ),
                   ),
-                  padding: const EdgeInsets.only(
-                    top: 15,
-                    bottom: 15,
+                  margin: EdgeInsets.only(
+                    left: AppLayout.getHeight(15),
+                    right: AppLayout.getHeight(15),
+                    bottom: AppLayout.getHeight(30),
+                  ),
+                  padding: EdgeInsets.only(
+                    top: AppLayout.getHeight(15),
+                    bottom: AppLayout.getHeight(15),
                   ),
                   child: Container(
                     padding: EdgeInsets.symmetric(
