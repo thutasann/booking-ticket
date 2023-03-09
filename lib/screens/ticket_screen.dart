@@ -8,6 +8,7 @@ import 'package:book_ticket/widgets/ticket_tabs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:barcode_widget/barcode_widget.dart';
 
 class TicketScreen extends StatelessWidget {
   const TicketScreen({Key? key}) : super(key: key);
@@ -47,9 +48,7 @@ class TicketScreen extends StatelessWidget {
                   ),
                 ),
 
-                const SizedBox(
-                  height: 1,
-                ),
+                const SizedBox(height: 1),
 
                 // TICKET INFO SECTION
                 Container(
@@ -65,14 +64,14 @@ class TicketScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [
                           ColumnLayout(
-                            firstText: "Flutter DB",
-                            secondText: "Passenger",
+                            firstText: "3452 214564",
+                            secondText: "Number of E-ticket",
                             alignment: CrossAxisAlignment.start,
                             isColor: false,
                           ),
                           ColumnLayout(
-                            firstText: "5221 364869",
-                            secondText: "Passenger",
+                            firstText: "B12343",
+                            secondText: "Booking code",
                             alignment: CrossAxisAlignment.end,
                             isColor: false,
                           )
@@ -84,7 +83,97 @@ class TicketScreen extends StatelessWidget {
                         isColor: false,
                         width: 5,
                       ),
+                      Gap(AppLayout.getHeight(20)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          ColumnLayout(
+                            firstText: "3452 214564",
+                            secondText: "Number of E-ticket",
+                            alignment: CrossAxisAlignment.start,
+                            isColor: false,
+                          ),
+                          ColumnLayout(
+                            firstText: "B12343",
+                            secondText: "Booking code",
+                            alignment: CrossAxisAlignment.end,
+                            isColor: false,
+                          )
+                        ],
+                      ),
+                      Gap(AppLayout.getHeight(20)),
+                      const LayoutBuilderWidget(
+                        sections: 15,
+                        isColor: false,
+                        width: 5,
+                      ),
+                      Gap(AppLayout.getHeight(20)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    "images/visa.png",
+                                    scale: 11,
+                                  ),
+                                  Text(
+                                    " *** 2462",
+                                    style: Styles.headLineStyle3,
+                                  )
+                                ],
+                              ),
+                              const Gap(5),
+                              Text(
+                                "Payment method",
+                                style: Styles.headLineStyle4,
+                              )
+                            ],
+                          ),
+                          const ColumnLayout(
+                            firstText: "\$249.99",
+                            secondText: "Price",
+                            alignment: CrossAxisAlignment.end,
+                            isColor: false,
+                          )
+                        ],
+                      ),
+                      const SizedBox(height: 1),
+                      Gap(AppLayout.getHeight(20))
                     ],
+                  ),
+                ),
+
+                // QR SECTION
+                Container(
+                  color: Colors.white,
+                  margin: const EdgeInsets.only(
+                    left: 15,
+                    right: 15,
+                  ),
+                  padding: const EdgeInsets.only(
+                    top: 15,
+                    bottom: 15,
+                  ),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: AppLayout.getHeight(15),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(
+                        AppLayout.getHeight(15),
+                      ),
+                      child: BarcodeWidget(
+                        barcode: Barcode.code128(),
+                        data: "https://github.com/thutasann",
+                        drawText: false,
+                        color: Styles.textColor,
+                        width: double.infinity,
+                        height: 70,
+                      ),
+                    ),
                   ),
                 )
               ],
