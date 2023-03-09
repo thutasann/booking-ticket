@@ -101,7 +101,8 @@ class HomeScreen extends StatelessWidget {
               children:
                   hotelList.map((hotel) => HotelScreen(hotel: hotel)).toList(),
             ),
-          )
+          ),
+          const Gap(25),
         ],
       ),
     ));
