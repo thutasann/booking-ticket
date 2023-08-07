@@ -15,7 +15,7 @@ class TicketScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = AppLayout.getSize(context);
+    // final size = AppLayout.getSize(context);
 
     return SafeArea(
       child: Scaffold(
