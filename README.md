@@ -1,6 +1,6 @@
 # FLUTTER Booking Ticket App UI
 
-This is the Booking Ticket App UI crafted with `Flutter`.
+This is the mini Booking Ticket App UI crafted with `Flutter`.
 
 ## Screens
 
